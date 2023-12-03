@@ -1,54 +1,96 @@
-# CodeIgniter 4 Framework
+# Joblister Fullstack Website (CodeIgniter 4)
+![alt text](joblister.PNG)
+## Overview
 
-## What is CodeIgniter?
+Welcome to Joblister, a fullstack web application built on CodeIgniter 4, enabling administrators to post jobs and bids effortlessly. This application is designed to streamline the process of job listing and bidding, with robust CRUD (Create, Read, Update, Delete) operations for both jobs and bids. Additionally, administrators can efficiently manage users.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Features
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+1. **Job Posting:**
+   - Admins can post job listings with detailed information, including title, description, requirements, and deadline.
+   - Each job listing is timestamped to track when it was posted.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+2. **Bid Management:**
+   - Admins can manage bids associated with each job.
+   - View and evaluate bids based on relevant details such as bid amount, bidder information, and timestamp.
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+3. **User Management:**
+   - Admins have the ability to add, view, update, and remove users.
+   - User management ensures secure access to the application and controls who can post jobs, bids, or perform administrative tasks.
 
-## Important Change with index.php
+4. **CRUD Operations:**
+   - Comprehensive CRUD operations for both jobs and bids.
+   - Admins can create, read, update, and delete job listings and bids to maintain accurate and up-to-date information.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Tech Stack
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- **Backend (CodeIgniter 4):**
+  - PHP
+  - CodeIgniter 4 framework for server-side logic
+  - MySQL or any preferred database for data storage
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- **Frontend:**
+  - HTML5, CSS3, JavaScript
 
-## Repository Management
+- **Authentication:**
+  - Implement CodeIgniter's authentication system or integrate with a secure authentication library.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Setup Instructions
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+1. **Clone the Repository:**
+   ```
+   git clone https://github.com/seaniaborbor/joblister.git
+   cd joblister-ci4
+   ```
 
-## Contributing
+2. **Install Dependencies:**
+   ```
+   composer install
+   ```
 
-We welcome contributions from the community.
+3. **Configure Database:**
+   - Create a new MySQL database name justthejob and inport sql file in the root directory of the clone project.
+   - Configure the database connection in `app/config/database.php`.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+4. **Run Migrations:**
+   ```
+   php spark migrate
+   ```
 
-## Server Requirements
+5. **Seed Database (Optional):**
+   - Optionally, run seeders to populate the database with sample data.
+   ```
+   php spark db:seed
+   ```
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+6. **Run the Application:**
+   - Start the development server.
+   ```
+   php spark serve
+   ```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+7. **Access the Application:**
+   - Open your browser and navigate to `http://localhost:8080`
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Usage
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+1. **Login as Admin:**
+   - Use the admin credentials to log in and access the admin dashboard.
+   - Login details/credentials: testuse@gmail.com; 12345678 are the email and password respectively
+
+2. **Manage Jobs:**
+   - Add, edit, and delete job listings.
+
+3. **Manage Bids:**
+   - View, evaluate, and manage bids associated with each job.
+
+4. **User Management:**
+   - Add, view, edit, and remove users.
+
+## Contributions
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to create a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
